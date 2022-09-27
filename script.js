@@ -1,5 +1,12 @@
 // Assignment code here
+let numberValue = prompt("Please enter a number: ")
 
+if (numberValue < 8 || numberValue >128){
+  alert("Your password needs to be between 8 and 128 characters");
+}
+else{
+  confirm("Your Password is "+numberValue+" characters");
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
