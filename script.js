@@ -1,6 +1,7 @@
 // Assignment code here
 
-var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var lowerLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var upperLetters = [];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 var specialCharacters = ["!","@","#","$","%","^","&","*","+","?","~","-"];
 
@@ -31,6 +32,104 @@ function passwordLength(){
 passwordLength();
 
 
+//functions that prompts users if they want lowercase, uppercase, numbers or special characters in the password
+function useUpperCase(){
+  var upperCase = prompt("Do you want uppercase letters in your password? (yes or no) ");
+
+  if(upperCase === null || upperCase === ""){
+    alert("Please answer Yes or no");
+    useUpperCase();
+  }
+  else if(upperCase === "yes" || upperCase === "Yes") {
+    upperCase = true;
+    return upperCase;
+  }
+  else if(upperCase === "no" || upperCase === "No") {
+    upperCase = false;
+    return upperCase;
+  }
+  else{
+    alert("Please answer Yes or no");
+    useUpperCase();
+  }
+
+}
+
+useUpperCase();
+
+
+function useLowerCase()  {
+  var lowerCase = prompt("Do you want lowercase letters in your password? (yes or no) ");
+
+  if(lowerCase === null || lowerCase === ""){
+    alert("Please answer Yes or no");
+    useLowerCase();
+  }
+  else if(lowerCase === "yes" || lowerCase === "Yes") {
+    lowerCase = true;
+    return lowerCase;
+  }
+  else if(lowerCase === "no" || lowerCase === "No") {
+    lowerCase= false;
+    return lowerCase;
+  }
+  else{
+    alert("Please answer Yes or no");
+    useLowerCase();
+  }
+  
+}
+
+useLowerCase();
+
+
+function useSpecialChar() {
+  var special = prompt("Do you want special characters in your password? (yes or no) ");
+
+  if(special === null ||special === ""){
+    alert("Please answer Yes or no");
+    useSpecialChar;
+  }
+  else if(special === "yes" || special === "Yes") {
+    special = true;
+    return special;
+  }
+  else if(special === "no" || special=== "No") {
+    special= false;
+    return special;
+  }
+  else{
+    alert("Please answer Yes or no");
+    useSpecialChar();
+  }
+}
+
+useSpecialChar();
+
+function useNumbers(){
+  var num = prompt("Do you want numbers in your password? (yes or no) ");
+
+  if(num === null || num=== ""){
+    alert("Please answer Yes or no");
+    useNumbers();
+  }
+  else if(num === "yes" || num === "Yes") {
+    num = true;
+    return num;
+  }
+  else if(num === "no" || num === "No") {
+    num= false;
+    return num;
+  }
+  else{
+    alert("Please answer Yes or no");
+    useNumbers();
+  }
+}
+
+useNumbers();
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -41,6 +140,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  
 
 }
 
