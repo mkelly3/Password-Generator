@@ -3,8 +3,9 @@
 var letters ="abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var specialCharacters = "!@#$%^&*(?+-><=.";
+var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var length;
-var upperCase;
+var upperCase = true;
 var number;
 var specialChar;
 var lowerCase;
@@ -59,65 +60,83 @@ function characterType(){
 
 
 //function to generate a randome password
-function generatePassword(){
+function generatePassword() {
 
   passwordLength();
   console.log(length)
   characterType();
-  password ="";
 
-  if(upperCase === true && lowerCase === true && number ===true && specialChar === true){
-    password += letters + letters.toUpperCase + numbers + specialCharacters;
+  console.log(upperCaseLetters);
+  password ="";
+  character ="";
+
+  if(upperCase === true && lowerCase === true && number === true && specialChar === true){
+    password += letters + upperCaseLetters + numbers + specialCharacters;
+    console.log(password);
   }
   else if(upperCase === true && lowerCase === true && number ===true){
-    password += letters + letters.toUpperCase + numbers;
+    password += letters + upperCaseLetters+ numbers;
+    console.log(password);
   }
   else if(upperCase === true && lowerCase === true && specialChar === true){
-    password += letters + letters.toUpperCase+ specialCharacters;
+    password += letters + upperCaseLetters + specialCharacters;
+    console.log(password);
   }
   else if(upperCase === true && number ===true && specialChar === true){
-    password += letters.toUpperCase + numbers + specialCharacters;
+    password += upperCaseLetters + numbers + specialCharacters;
+    console.log(password);
   }
   else if(lowerCase === true && number ===true && specialChar === true){
     password += letters + numbers + specialCharacters;
+    console.log(password);
   }
   else if(upperCase === true && lowerCase === true){
-    password += letters + letters.toUpperCase;
+    password += letters + upperCaseLetters;
+    console.log(password);
   }
   else if(number ===true && specialChar === true){
     password += numbers + specialCharacters;
+    console.log(password);
   }
   else if(upperCase === true&& specialChar === true){
-    password += letters.toUpperCase + specialCharacters;
+    password += upperCaseLetters + specialCharacters;
+    console.log(password);
   }
   else if( lowerCase === true && number ===true){
     password += letters + numbers;
+    console.log(password);
   }
   else if(upperCase === true && number ===true){
-    password += letters.toUpperCase + numbers;
+    password += upperCaseLetters + numbers;
+    console.log(password);
   }
   else if(lowerCase === true && specialChar === true){
     password += letters + specialCharacters;
+    console.log(password);
   }
-  else if(upperCase === true){
-    password += letters.toUpperCase;
+  else if(upperCase){
+    password += upperCaseLetters;
+    console.log(password);
   }
   else if(lowerCase === true ){
     password += letters;
+    console.log(password);
   }
   else if( number === true){
     password += numbers;
-  }
+    console.log(password);}
+    
   else{
     password += specialCharacters;
-  }
+    console.log(password);
+    }
+    for(var i=0; i < length; i++){
+      var random = Math.floor(Math.random() * password.length);
+      character += password.substring(random,random +1);
 
-  for(var i=0; i < length; i++)
-  {
-
-    password += password.charAt(Math.floor(Math.random() * password.length))
   }
-  return password;
+  
+  return character;
 
 }
 
@@ -127,8 +146,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password1 = "";
-  password =generatePassword();
+  var password =generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
