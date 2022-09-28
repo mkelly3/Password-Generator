@@ -63,72 +63,71 @@ function characterType(){
 function generatePassword() {
 
   passwordLength();
-  console.log(length)
   characterType();
 
-  console.log(upperCaseLetters);
   password ="";
   character ="";
 
   if(upperCase === true && lowerCase === true && number === true && specialChar === true){
     password += letters + upperCaseLetters + numbers + specialCharacters;
-    console.log(password);
+    // console.log(password);
   }
   else if(upperCase === true && lowerCase === true && number ===true){
     password += letters + upperCaseLetters+ numbers;
-    console.log(password);
+    // console.log(password);
   }
   else if(upperCase === true && lowerCase === true && specialChar === true){
     password += letters + upperCaseLetters + specialCharacters;
-    console.log(password);
+    // console.log(password);
   }
   else if(upperCase === true && number ===true && specialChar === true){
     password += upperCaseLetters + numbers + specialCharacters;
-    console.log(password);
+    // console.log(password);
   }
   else if(lowerCase === true && number ===true && specialChar === true){
     password += letters + numbers + specialCharacters;
-    console.log(password);
+    // console.log(password);
   }
   else if(upperCase === true && lowerCase === true){
     password += letters + upperCaseLetters;
-    console.log(password);
+    // console.log(password);
   }
   else if(number ===true && specialChar === true){
     password += numbers + specialCharacters;
-    console.log(password);
+    // console.log(password);
   }
   else if(upperCase === true&& specialChar === true){
     password += upperCaseLetters + specialCharacters;
-    console.log(password);
+    // console.log(password);
   }
   else if( lowerCase === true && number ===true){
     password += letters + numbers;
-    console.log(password);
+    // console.log(password);
   }
   else if(upperCase === true && number ===true){
     password += upperCaseLetters + numbers;
-    console.log(password);
+    // console.log(password);
   }
   else if(lowerCase === true && specialChar === true){
     password += letters + specialCharacters;
-    console.log(password);
+    // console.log(password);
   }
   else if(upperCase){
     password += upperCaseLetters;
-    console.log(password);
+    // console.log(password);
   }
   else if(lowerCase === true ){
     password += letters;
-    console.log(password);
+    // console.log(password);
   }
   else if( number === true){
     password += numbers;
-    console.log(password);}
+    // console.log(password);
+  }
     
   else{
     password += specialCharacters;
-    console.log(password);
+    // console.log(password);
     }
     for(var i=0; i < length; i++){
       var random = Math.floor(Math.random() * password.length);
