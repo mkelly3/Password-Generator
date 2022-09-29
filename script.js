@@ -4,11 +4,11 @@ var letters ="abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var specialCharacters = "!@#$%^&*(?+-><=.";
 var upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var length;
+var length = 8; //if it defaults password must be 8 characters
 var upperCase = true;
-var number;
-var specialChar;
-var lowerCase;
+var number = true;
+var specialChar = true;
+var lowerCase = true;
 
 
 //Function to determine the length of the password
@@ -59,14 +59,14 @@ function characterType(){
 //characterType();
 
 
-//function to generate a randome password
+//function to generate a random password
 function generatePassword() {
 
   passwordLength();
   characterType();
 
-  password ="";
-  character ="";
+  var password ="";
+  var password1 ="";
 
   if(upperCase === true && lowerCase === true && number === true && specialChar === true){
     password += letters + upperCaseLetters + numbers + specialCharacters;
@@ -122,20 +122,24 @@ function generatePassword() {
   }
   else if( number === true){
     password += numbers;
-    // console.log(password);
+    //console.log(password);
   }
     
   else{
     password += specialCharacters;
     // console.log(password);
     }
-    for(var i=0; i < length; i++){
+
+    //for loop to go through all of the characters in password to generate a random one
+    for(var i = 0; i < length; i++){
+      //random characters from Password
       var random = Math.floor(Math.random() * password.length);
-      character += password.substring(random,random +1);
+      //adding the randomly selected characters to a new password
+      password1 += password.substring(random,random + 1);
 
   }
   
-  return character;
+  return password1;
 
 }
 

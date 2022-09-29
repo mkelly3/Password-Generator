@@ -2,8 +2,10 @@
 
 ## Image 
 ![PassWord](./assets/Password%20Generator.JPG)
+- [WebPage](https://mkelly3.github.io/Password-Generator/)
 
 ## Overview
+This application generates a random password. The user inputs specific paramaters including the password lenght and the character type used such as uppercase, lowercase, special characters and numbers. If the certain parameters are not meet the user is alerted and asked to input new values. 
 
 ## Technologies Used
 - JavaScript
@@ -13,6 +15,8 @@
 - GitHub
 
 ## Code Snippet
+
+This code snippet uses the prompt,alert and confirm functions in JavaScrip.
 ``` 
 {
 function passwordLength(){
